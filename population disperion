@@ -1,1 +1,25 @@
+# install.packages("sdm")
+# install.packages("terra")
+# install.packages("viridis")
 
+library(terra)
+library(sdm)
+library(viridis)
+
+file <- system.file("external/species.shp", package="sdm")
+
+rana <- vect(file)
+plot(rana)
+
+
+# Assuming 'rana' is your SpatVector with points and attributes
+# Extract coordinates using the geom() function
+coordinates <- geom(rana)
+# subset the dataset
+presence<-rana[rana$occurence==1]
+
+# load the path to the elevation file
+
+par(mfrow=c(2,1))
+plot(elevmap)
+plot(tempmap)
