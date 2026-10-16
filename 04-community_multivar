@@ -1,0 +1,4 @@
+# Recall the vegan package 
+multipca <- pca(dune)
+#pricipal comp
+multivar<- prcomp(dune)
